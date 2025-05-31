@@ -1,5 +1,5 @@
 const Database = require('better-sqlite3');
-const db = new Database('medreminders.db');
+const db = new Database('/data/medreminders.db');
 
 // Create table
 db.prepare(`

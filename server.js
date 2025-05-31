@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const { handleIncomingEmail } = require('./mailHandler');
 
 const app = express();
-const db = require('./db');
+//const db = require('./db');
+const db = new Database('/data/medreminders.db');
 
 app.use(bodyParser.json());
 

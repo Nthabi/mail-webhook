@@ -28,5 +28,9 @@ app.get('/reminders', (req, res) => {
     res.json(reminders);
 });
 
+app.get('/health', (req, res) => {
+    res.json("App is healthy");
+});
+
 
 app.listen(3000, () => console.log("MedReminder server running on port 3000"));

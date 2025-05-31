@@ -5,6 +5,7 @@ const { handleIncomingEmail } = require('./mailHandler');
 
 const app = express();
 //const db = require('./db');
+const Database = require('better-sqlite3');
 const db = new Database('/data/medreminders.db');
 
 app.use(bodyParser.json());

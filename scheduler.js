@@ -12,7 +12,7 @@ function scheduleReminder({ email, task, time, frequency }) {
 
     if (frequency === 'daily') {
         cron.schedule(cronTime, () => {
-            sendEmail(email, `Reminder: ${task}`, `Don't forget to: ${task}`);
+            sendReminderEmail(email, `Reminder: ${task}`, `Don't forget to: ${task}`);
         });
     }
 }
@@ -29,17 +29,4 @@ async function sendReminderEmail(to, task, time) {
   });
 }
 
-// function sendEmail(to, subject, body) {
-//     return axios.post('https://api.postmarkapp.com/email', {
-//         From: process.env.SENDER_EMAIL,
-//         To: to,
-//         Subject: subject,
-//         TextBody: body
-//     }, {
-//         headers: {
-//             'X-Postmark-Server-Token': process.env.POSTMARK_API_TOKEN
-//         }
-//     });
-// }
-
-module.exports = { scheduleReminder, sendEmail };
+module.exports = { scheduleReminder, sendReminderEmail };

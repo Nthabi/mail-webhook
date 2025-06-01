@@ -9,6 +9,7 @@ const Database = require('better-sqlite3');
 const db = new Database('/data/medreminders.db');
 
 app.use(bodyParser.json());
+app.use(cors());
 
 
 app.post('/inbound-email', async (req, res) => {
